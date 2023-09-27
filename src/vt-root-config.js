@@ -27,6 +27,18 @@ registerApplication({
   activeWhen: () => location.pathname === "/react-route",
 });
 
+registerApplication({
+  name: "@vt/react-lazy",
+  app: () => System.import("@vt/react-lazy"),
+  activeWhen: ["/react-lazy"],
+});
+
+registerApplication({
+  name: "@vt/react-header",
+  app: () => System.import("@vt/react-header"),
+  activeWhen: ["/"],
+});
+
 start({
   urlRerouteOnly: true,
 });
